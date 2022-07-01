@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Todo list</title>
 </head>
+
 <body>
     <div class="title">
         <h1>TODOS</h1>
     </div>
-        <div class="todo-page">
-            <div class="search">
-                <input type="text" tabindex="1" name="search" placeholder="Whats need to be done?">
-                
+    <div class="todo-page">
+        <form id="todo-form">
+            <div class="todo-form__todo-input">
+                <input id="todo-form__todo-input" type="text" tabindex="1" name="search" placeholder="Whats need to be done?">
             </div>
-            <div class="todo-page__list">
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                </ul>
+            <div>
+                <button type="submit" tabindex="2">Add new task</button>
             </div>
-            <div class="actions">
-                <div class="action__text"><span>3</span> items left </div>
-                <div class="action__all">all</div>
-                <div class="action__active">active</div>
-                <div class="action__completed">completed</div>
-                <div class="action__clear-completed"> clear completed</div>
-            </div>
+        </form>
+        <div id="todo-page__list">
+            <ul>
+                <li>Learn JS</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
         </div>
-        <div class="peace-of-pages">
-            <div class="peace-of-pages__first-list style"></div>
-            <div class="peace-of-pages__secont-list style"></div>
+        <div class="actions">
+            <div class="actions__text"><span>3</span> items left </div>
+            <div class="actions__all btn-style">all</div>
+            <div class="actions__active btn-style">active</div>
+            <div class="actions__completed btn-style">completed</div>
+            <div class="actions__clear-completed btn-style"> clear completed</div>
         </div>
-            
+    </div>
+    <div class="peace-of-pages">
+        <div class="peace-of-pages__first-list style"></div>
+        <div class="peace-of-pages__secont-list style"></div>
+    </div>
+
     </div>
     </div>
-    <link rel="stylesheet" href="script.js">
+    <script src="./script.js"></script>
 </body>
+
 </html>

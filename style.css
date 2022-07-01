@@ -41,7 +41,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body {
     background-color:aliceblue;
     font-size: 15px;
-    background: url('../img/picture.png');
+    background: url('./img/picture.png');
+    background-attachment: fixed;
 }
 
 body {
@@ -56,6 +57,15 @@ body {
     box-shadow: 0px 0px 5px #2f0252;
 }
 
+#todo-form {
+    display: flex;
+}
+
+#todo-form button {
+    height: 100%;
+    padding: 10px;
+    background-color: #dab5fa;
+}
 .title {
     text-align: center;
     font-size: 60px;
@@ -63,28 +73,28 @@ body {
     opacity: 0.7;
 }
 
-.search {
+.todo-form__todo-input {
+    flex-grow: 1;
 }
 
-.search input {
+.todo-form__todo-input input {
     font-size: 20px;
     width: 100%;
     height: 50px;
     border-bottom: 1px solid darkgray;
-    opacity: 0.5
-
+    opacity: 0.5;
 }
-.todo-page__list {
+#todo-page__list {
 }
 
-.todo-page__list li {
-    height: 30px;
-    padding: 10px;
+#todo-page__list li {
+    font-size: 18px;
+    height: 40px;
     border: 1px solid #f0f6ff;
     
 }
 
-.todo-page__list li::before {
+#todo-page__list li::before {
     
 }
 
@@ -97,17 +107,30 @@ body {
 
 .actions div {
     opacity: 0.4;
+    padding: 2px;
 }
-.action__text {
+.actions__text {
 }
-.action__all {
+.actiosn__all {
 }
-.action__active {
+.actions__active {
 
 }
-.action__completed {
+.actions__completed {
 }
-.action__clear-completed {
+.actions__clear-completed {
+}
+
+.btn-style:hover {
+    border-radius: 5px;
+    background-color: azure;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+}
+
+
+.btn-style:active {
+    font-size: 14px;
 }
 .peace-of-pages {
 }
