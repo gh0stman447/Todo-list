@@ -109,6 +109,15 @@ body {
     opacity: 0.4;
     padding: 2px;
 }
+
+.actions div:nth-child(3n + 1) {
+    flex-grow: 1;
+}
+
+.actions div:nth-child(n+2) {
+    margin-left: 20px;
+}
+
 .actions__text {
 }
 .actiosn__all {
