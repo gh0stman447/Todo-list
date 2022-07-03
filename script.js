@@ -59,13 +59,32 @@ allTaskListBtn.addEventListener('click', () => {
      }
 });
 
-const activeTastList = document.querySelector('.actions__active ');
+const activeTaskBtn = document.querySelector('.actions__active ');
 
-activeTastList.addEventListener('click', () => {
+activeTaskBtn.addEventListener('click', () => {
     if(!allTaskList.length) return;
     for(let task of allTaskList) {
         if(task.classList.contains('complete-task-style')) {
             task.classList.add('invisible-task');
+        }
+    }
+})
+
+const completedTaskBtn = document.querySelector('.actions__completed');
+completedTaskBtn.addEventListener('click', () => {
+    for(let task of allTaskList) {
+        if (!task.classList.contains('complete-task-style')) {
+            task.classList.add('invisible-task');
+        }
+    }
+})
+
+const clearCompletedTask = document.querySelector('.actions__clear-completed');
+
+clearCompletedTask.addEventListener('click', () => {
+    for (let task of allTaskList) {
+        if (task.classList.contains('complete-task-style')) {
+            task.remove();
         }
     }
 })
