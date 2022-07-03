@@ -67,14 +67,21 @@ activeTaskBtn.addEventListener('click', () => {
         if(task.classList.contains('complete-task-style')) {
             task.classList.add('invisible-task');
         }
+        if (!task.classList.contains('complete-task-style') && task.classList.contains('invisible-task')) {
+            task.classList.remove('invisible-task');
+        }
     }
 })
 
 const completedTaskBtn = document.querySelector('.actions__completed');
 completedTaskBtn.addEventListener('click', () => {
+    if (!allTaskList.length) return;
     for(let task of allTaskList) {
         if (!task.classList.contains('complete-task-style')) {
             task.classList.add('invisible-task');
+        }
+        if (task.classList.contains('invisible-task') && task.classList.contains('complete-task-style')) {
+            task.classList.remove('invisible-task');
         }
     }
 })
