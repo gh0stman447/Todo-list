@@ -29,8 +29,7 @@ function formHandler(event) {
     wrapper.className = 'text-task';
 
     //Создание поля "Выполнено"
-    const completeTaskBtn = document.createElement('input');
-    completeTaskBtn.type = 'checkbox';
+    const completeTaskBtn = document.createElement('span');
     newTask.className = 'task';
     completeTaskBtn.className = 'complete-task-btn';
     newTask.append(completeTaskBtn);
@@ -130,6 +129,7 @@ completedTaskBtn.addEventListener('click', () => {
             task.classList.remove('invisible-task');
         }
     }
+    
 })
 
 //Обработчик кнопки очистки выполненных заданий, по нажатию которой удаляет

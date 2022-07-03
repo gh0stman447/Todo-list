@@ -43,23 +43,22 @@ body {
     background: url('./img/picture.png');
     background-attachment: fixed;
     font-size: 14px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Заголовок */
 .title {
-    display: inline;
     text-align: center;
-    font-size: 60px;
+    font-size: calc(60px + 60 * (100vw / 1280));
 }
 
 h1 {
-    opacity: 0.5;
+    opacity: 0.6;
+    font-weight: bolder;
+    margin: 10px;
 }
 /*Список дел*/
 .todo-page {
     position: relative;
-    width: 50%;
     background-color: white;
     margin: 0 auto;
     box-shadow: 0px 0px 5px #2f0252;
@@ -71,13 +70,10 @@ h1 {
     display: flex;
 }
 
-
+/*Кнопка добавления задания*/
 #todo-form button {
-    
     white-space: nowrap;
-    /* font-size: 10px; */
-    font-size: 20px;
-    font-size: calc(10px + 10 * (100vw / 1280));
+    font-size: calc(14px + 6 * (100vw / 1280));
     padding: 10px;
     background-color:#da15fa;
     border-radius: 20px 30px 15px 30px ;
@@ -95,11 +91,9 @@ h1 {
 .todo-form__todo-input {
     flex-grow: 1;
 }
-
+/*Поле ввода*/
 .todo-form__todo-input input {
-    /* font-size: 12px; */
-    font-size: 25px;
-    font-size: calc(12px + 13 * (100vw / 1280));
+    font-size: calc(17px + 8 * (100vw / 1280));
     width: 100%;
     height: 100%;
     border-bottom: 1px solid darkgray;
@@ -108,35 +102,32 @@ h1 {
     padding-left: 13px;
     margin: 0;
 }
-
+    
 todo-form__todo-input > div {
     display: inline;
 }
 
 #todo-page__list {
+    font-size: calc(16px + 7 * (100vw / 1280));
 }
 
 #todo-page__list li {
     height: 40px;
     border: 1px solid #f0f6ff;
-    font-size: 23px;
-    /* font-size: 14px; */
-    font-size: calc(14px + 9 * (100vw / 1280));
+
 }
 
-#todo-page__list li::before {
-    
-}
 
+/*Блок с действиями*/
 .actions {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     padding: 10px;
     border-top: 1px solid darkgray;
-    /* font-size: 13px; */
+    /* font-size: 16px; */
     font-size: 20px;
-    font-size: calc(13px + 7 * (100vw / 1280));
+    font-size: calc(16px + 4 * (100vw / 1280));
 }
 
 .actions div {
@@ -144,22 +135,10 @@ todo-form__todo-input > div {
     padding: 2px;
 }
 
-
+/*Скрытая очистка заданий*/
 .actions .invisible-clear-btn {
     opacity: 0;
     pointer-events: none;
-}
-
-.actions__text {
-}
-.actiosn__all {
-}
-.actions__active {
-
-}
-.actions__completed {
-}
-.actions__clear-completed {
 }
 
 /*Кнопки выбора при наведении*/
@@ -176,25 +155,29 @@ todo-form__todo-input > div {
     background-color:#da15fa;
 }
 
-
+/*Адаптивный размер шрифта*/
 @media(max-width: 767px) {
     .todo-form__todo-input input {
-        font-size: calc(12px + (13 + 13 * 0.7) * ((100vw - 375px) / 1280));
+        font-size: calc(16px + (8 + 8 * 0.7) * ((100vw - 375px) / 1280));
     }
     #todo-form button {
-        font-size: calc(10px + (10 + 10 * 0.7) * ((100vw - 375px) / 1280));
+        font-size: calc(14px + (14 + 14 * 0.7) * ((100vw - 375px) / 1280));
     }
     
-    #todo-page__list li {
-        font-size: calc(14px + (9 + 9 * 0.7)* ((100vw - 375px) / 1280));
+    #todo-page__list {
+        font-size: calc(16px + (7 + 7 * 0.7)* ((100vw - 375px) / 1280));
     }
     .actions {
-        font-size: calc(13px + (7 + 7 * 0.7) * ((100vw - 375px) / 1280));
+        font-size: calc(16px + (4 + 4 * 0.7) * ((100vw - 375px) / 1280));
+    }
+    .title {
+        font-size: calc(60px + (60 + 60 * 0.7) * ((100vw - 375px) / 1280));
     }
 }
 
+/*Ширина страницы*/
 @media(min-width: 375px){
     .todo-page {
-        width: 70%;
+        width: 90%;
     }
 }
