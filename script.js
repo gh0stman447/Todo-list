@@ -13,6 +13,8 @@ function formHandler(event) {
     if(taskText == '') return;
 
     const newTask = document.createElement('li');
+
+    //TODO ненужный тег p(возможно)
     const wrapper = document.createElement('p');
     
     wrapper.className = 'text-task';
@@ -24,10 +26,7 @@ function formHandler(event) {
 
     wrapper.innerText = taskText;
     newTask.insertAdjacentElement('beforeend', wrapper);
-
-
     
-
     const deleteButton = document.createElement('img');
     deleteButton.className = 'delete-btn';
     deleteButton.setAttribute('src', './img/krest.png')
@@ -36,17 +35,13 @@ function formHandler(event) {
     deleteButton.addEventListener('click', (event) => event.target.closest('li').remove());
 
     completeTaskBtn.addEventListener('click', function() {
-        const text = this.closest('li').querySelector('.text-task');
+        const text = this.closest('li');
         if (text.classList.contains('complete-task-style')) {
             text.classList.remove('complete-task-style');
         }
         else {
             text.classList.add('complete-task-style');
         }
-        
-
-        
-
     })
 
     console.log(completeTaskBtn);
@@ -54,6 +49,26 @@ function formHandler(event) {
     todoInput.value = '';
 }
 
+const allTaskListBtn = document.querySelector('.actions__all');
+const allTaskList = document.getElementsByTagName('li');
+
+allTaskListBtn.addEventListener('click', () => {
+     if(!allTaskList.length) return;
+     for(let task of allTaskList) {
+        task.classList.remove('invisible-task');
+     }
+});
+
+const activeTastList = document.querySelector('.actions__active ');
+
+activeTastList.addEventListener('click', () => {
+    if(!allTaskList.length) return;
+    for(let task of allTaskList) {
+        if(task.classList.contains('complete-task-style')) {
+            task.classList.add('invisible-task');
+        }
+    }
+})
 // function setAttribute(el, attrs) {
 //     for(let key in attrs) {
 //         el.setAttribute(key, attrs[key]);
