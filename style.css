@@ -42,21 +42,24 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body {
     background: url('./img/picture.png');
     background-attachment: fixed;
-    font-size: 15px;
+    font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*Заголовок*/
+/* Заголовок */
 .title {
+    display: inline;
     text-align: center;
     font-size: 60px;
-    margin: 20px 0;
-    opacity: 0.7;
+}
+
+h1 {
+    opacity: 0.5;
 }
 /*Список дел*/
 .todo-page {
     position: relative;
-    width: 600px;
+    width: 50%;
     background-color: white;
     margin: 0 auto;
     box-shadow: 0px 0px 5px #2f0252;
@@ -67,12 +70,15 @@ body {
 /*Форма*/
 #todo-form {
     display: flex;
-    
 }
 
 
 #todo-form button {
-    height: 100%;
+    
+    white-space: nowrap;
+    /* font-size: 10px; */
+    font-size: 20px;
+    font-size: calc(10px + 10 * (100vw / 1280));
     padding: 10px;
     background-color:#da15fa;
     border-radius: 20px 30px 15px 30px ;
@@ -91,10 +97,12 @@ body {
     flex-grow: 1;
 }
 
-.todo-form__todo-input input[type=text] {
-    font-size: 20px;
+.todo-form__todo-input input {
+    /* font-size: 12px; */
+    font-size: 25px;
+    font-size: calc(12px + 13 * (100vw / 1280));
     width: 100%;
-    height: 50px;
+    height: 100%;
     border-bottom: 1px solid darkgray;
     opacity: 0.5;
     border-top-left-radius: 30px;
@@ -102,15 +110,19 @@ body {
     margin: 0;
 }
 
+todo-form__todo-input > div {
+    display: inline;
+}
 
 #todo-page__list {
 }
 
 #todo-page__list li {
-    font-size: 18px;
     height: 40px;
     border: 1px solid #f0f6ff;
-    
+    font-size: 23px;
+    /* font-size: 14px; */
+    font-size: calc(14px + 9 * (100vw / 1280));
 }
 
 #todo-page__list li::before {
@@ -119,9 +131,13 @@ body {
 
 .actions {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content:space-around;
     padding: 10px;
     border-top: 1px solid darkgray;
+    /* font-size: 13px; */
+    font-size: 20px;
+    font-size: calc(13px + 7 * (100vw / 1280));
 }
 
 .actions div {
@@ -133,14 +149,6 @@ body {
 .actions .invisible-clear-btn {
     opacity: 0;
     pointer-events: none;
-}
-
-.actions div:nth-child(3n + 1) {
-
-}
-
-.actions div:nth-child(n+2) {
-    margin-left: 20px;
 }
 
 .actions__text {
@@ -185,8 +193,30 @@ body {
     box-shadow: 1px 2px 5px #261044;
 }
 .peace-of-pages__first-list {
-    width: 590px;
+    width: 90%;
 }
 .peace-of-pages__secont-list {
-    width: 580px;
+    width: 85%;
+}
+
+@media(max-width: 767px) {
+    .todo-form__todo-input input {
+        font-size: calc(12px + (13 + 13 * 0.7) * ((100vw - 375px) / 1280));
+    }
+    #todo-form button {
+        font-size: calc(10px + (10 + 10 * 0.7) * ((100vw - 375px) / 1280));
+    }
+    
+    #todo-page__list li {
+        font-size: calc(14px + (9 + 9 * 0.7)* ((100vw - 375px) / 1280));
+    }
+    .actions {
+        font-size: calc(13px + (7 + 7 * 0.7) * ((100vw - 375px) / 1280));
+    }
+}
+
+@media(min-width: 375px){
+    .todo-page {
+        width: 70%;
+    }
 }
