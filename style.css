@@ -63,8 +63,7 @@ h1 {
     background-color: white;
     margin: 0 auto;
     box-shadow: 0px 0px 5px #2f0252;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-radius: 30px;
 }
 
 /*Форма*/
@@ -174,30 +173,9 @@ todo-form__todo-input > div {
 
 /*Кнопки выбора при нажатии*/
 .btn-style:active {
-    font-size: 14px;
     background-color:#da15fa;
 }
 
-/*Кусочки страниц*/
-.peace-of-pages {
-    position: absolute;
-    bottom: -14px;
-    right: 5px;
-}
-
-.peace-of-pages-style {
-    margin: 0 auto;
-    height: 7px;
-    background-color: white;
-    border-top: 1px solid darkgray;
-    box-shadow: 1px 2px 5px #261044;
-}
-.peace-of-pages__first-list {
-    width: 90%;
-}
-.peace-of-pages__secont-list {
-    width: 85%;
-}
 
 @media(max-width: 767px) {
     .todo-form__todo-input input {
