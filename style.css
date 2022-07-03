@@ -51,6 +51,7 @@ body {
 }
 
 .todo-page {
+    position: relative;
     width: 600px;
     background-color: white;
     margin: 0 auto;
@@ -110,6 +111,12 @@ body {
     padding: 2px;
 }
 
+
+.actions .invisible-clear-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .actions div:nth-child(3n + 1) {
 
 }
@@ -130,6 +137,7 @@ body {
 .actions__clear-completed {
 }
 
+/*Кнопки выбора при наведении*/
 .btn-style:hover {
     border-radius: 5px;
     background-color: azure;
@@ -138,13 +146,19 @@ body {
 }
 
 
+/*Кнопки выбора при нажатии*/
 .btn-style:active {
     font-size: 14px;
 }
+
+/*Кусочки страниц*/
 .peace-of-pages {
+    position: absolute;
+    bottom: -14px;
+    right: 5px;
 }
 
-.style {
+.peace-of-pages-style {
     margin: 0 auto;
     height: 7px;
     background-color: white;

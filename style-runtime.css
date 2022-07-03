@@ -1,18 +1,24 @@
 
+
+/*Блок с заданием*/
 .task {
     position: relative;
     list-style: none;
 }
 
+/*Наведение на задание*/
 .task:hover{
     background-color: antiquewhite;
 }
+
+/*Кнопка Выполненные задания*/
 .complete-task-btn {
     position: absolute;
     left: 5px;
     bottom: 10px;
 }
 
+/*Кнопка удаления*/
 .delete-btn {
     width: 30px; 
     height: 30px;
@@ -21,19 +27,26 @@
     position: absolute;
 }
 
+/*Текст задания*/
 .text-task {      
     margin: 10px;
     margin-left: 25px;
 }
 
+/*Выполненное задание*/
 .complete-task-style {
     opacity: 0.5;
     text-decoration: line-through;
 }
+
+/*Отображения задания*/
 .visible-task {
     display: block;
 }
 
+/*Скрытие задания*/
+
 .invisible-task {
     display: none;
 }
+
