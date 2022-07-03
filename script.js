@@ -14,7 +14,7 @@ function formHandler(event) {
 
     const newTask = document.createElement('li');
 
-    //TODO ненужный тег p(возможно)
+    //TODO ненужный тег p(возможно надо будет удалить)
     const wrapper = document.createElement('p');
     
     wrapper.className = 'text-task';
@@ -54,6 +54,7 @@ const allTaskList = document.getElementsByTagName('li');
 
 allTaskListBtn.addEventListener('click', () => {
      if(!allTaskList.length) return;
+
      for(let task of allTaskList) {
         task.classList.remove('invisible-task');
      }
@@ -63,6 +64,7 @@ const activeTaskBtn = document.querySelector('.actions__active ');
 
 activeTaskBtn.addEventListener('click', () => {
     if(!allTaskList.length) return;
+
     for(let task of allTaskList) {
         if(task.classList.contains('complete-task-style')) {
             task.classList.add('invisible-task');
@@ -74,8 +76,10 @@ activeTaskBtn.addEventListener('click', () => {
 })
 
 const completedTaskBtn = document.querySelector('.actions__completed');
+
 completedTaskBtn.addEventListener('click', () => {
     if (!allTaskList.length) return;
+
     for(let task of allTaskList) {
         if (!task.classList.contains('complete-task-style')) {
             task.classList.add('invisible-task');
@@ -86,9 +90,9 @@ completedTaskBtn.addEventListener('click', () => {
     }
 })
 
-const clearCompletedTask = document.querySelector('.actions__clear-completed');
+const clearCompletedTaskBtn = document.querySelector('.actions__clear-completed');
 
-clearCompletedTask.addEventListener('click', () => {
+clearCompletedTaskBtn.addEventListener('click', () => {
     for (let task of allTaskList) {
         if (task.classList.contains('complete-task-style')) {
             task.remove();

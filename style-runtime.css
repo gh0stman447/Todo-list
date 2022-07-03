@@ -1,0 +1,36 @@
+
+.task {
+    position: relative;
+    list-style: none;
+    
+}
+.complete-task-btn {
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+}
+
+.delete-btn {
+    width: 30px; 
+    height: 30px;
+    right: 0;
+    top: 5px;
+    position: absolute;
+}
+
+.text-task {      
+    margin: 10px;
+    margin-left: 25px;
+}
+
+.complete-task-style {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+.visible-task {
+    display: block;
+}
+
+.invisible-task {
+    display: none;
+}
