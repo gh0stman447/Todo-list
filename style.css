@@ -111,7 +111,7 @@ body {
 }
 
 .actions div:nth-child(3n + 1) {
-    flex-grow: 1;
+
 }
 
 .actions div:nth-child(n+2) {

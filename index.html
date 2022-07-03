@@ -7,13 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Todo list</title>
+
+    <style>
+        .task {
+            position: relative;
+            list-style: none;
+            
+        }
+        .complete-task-btn {
+            position: absolute;
+            left: 5px;
+            bottom: 10px;
+        }
+
+        .delete-btn {
+            width: 30px; 
+            height: 30px;
+            right: 0;
+            top: 5px;
+            position: absolute;
+        }
+
+        .text-task {      
+            margin: 10px;
+            margin-left: 25px;
+        }
+        
+        .complete-task-style {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body>
     <div class="title">
         <h1>TODOS</h1>
     </div>
-    <div class="todo-page">
+    <div class="todo-page"> 
         <form id="todo-form">
             <div class="todo-form__todo-input">
                 <input id="todo-form__todo-input" type="text" tabindex="1" name="search" placeholder="Whats need to be done?">
@@ -23,14 +54,7 @@
             </div>
         </form>
         <div id="todo-page__list">
-            <ul>
-                <li>Learn JS</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-            </ul>
+            <ul></ul>
         </div>
         <div class="actions">
             <div class="actions__text"><span>3</span> items left </div>
