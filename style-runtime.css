@@ -2,7 +2,10 @@
 .task {
     position: relative;
     list-style: none;
-    
+}
+
+.task:hover{
+    background-color: antiquewhite;
 }
 .complete-task-btn {
     position: absolute;

@@ -3,12 +3,18 @@ const todoList = document.querySelector('#todo-page__list');
 const todoForm = document.querySelector('#todo-form');
 const todoInput = document.querySelector('#todo-form__todo-input')
 
+let countOfTask = count = 0
+
 todoForm.addEventListener('submit', formHandler);
 
 function formHandler(event) {
+
+    countOfTask++;
+    count = document.querySelector('.actions__text').getElementsByTagName('span')[0];
+    count.innerText = countOfTask;
+
     event.preventDefault();
     const taskText = todoInput.value;
-    
     todoInput.focus();
     if(taskText == '') return;
 
@@ -31,22 +37,30 @@ function formHandler(event) {
     deleteButton.className = 'delete-btn';
     deleteButton.setAttribute('src', './img/krest.png')
     newTask.append(deleteButton);
-    
-    deleteButton.addEventListener('click', (event) => event.target.closest('li').remove());
 
-    completeTaskBtn.addEventListener('click', function() {
-        const text = this.closest('li');
+    deleteButton.addEventListener('click', (event) => {
+        event.target.closest('li').remove();
+        if (!event.target.closest('li').classList.contains('complete-task-style'))
+        countOfTask--;
+        count.innerText = countOfTask;
+    })
+
+    completeTaskBtn.addEventListener('click', completeTaskBtnHandler)
+
+    todoList.append(newTask);
+    todoInput.value = '';
+}
+
+function completeTaskBtnHandler() {
+    const text = this.closest('li');
         if (text.classList.contains('complete-task-style')) {
             text.classList.remove('complete-task-style');
+            count.innerText = ++countOfTask;
         }
         else {
             text.classList.add('complete-task-style');
+            count.innerText = --countOfTask;
         }
-    })
-
-    console.log(completeTaskBtn);
-    todoList.append(newTask);
-    todoInput.value = '';
 }
 
 const allTaskListBtn = document.querySelector('.actions__all');
@@ -95,6 +109,7 @@ const clearCompletedTaskBtn = document.querySelector('.actions__clear-completed'
 clearCompletedTaskBtn.addEventListener('click', () => {
     for (let task of allTaskList) {
         if (task.classList.contains('complete-task-style')) {
+            //TODO пофксить баг с удалением выполненных задач
             task.remove();
         }
     }
